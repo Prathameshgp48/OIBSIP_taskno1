@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+    <link rel="icon" href="favicon.png" type="favicon">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <container>
+      <div class="calc">
+        <h3>Calculator</h3>
+        <form>
+          <div id="screen">
+            <input type="text" name="screen" id="screenInp" readonly/>
+          </div>
+          <div>
+            <input type="button" onclick="clearAll()" value="AC" />
+            <input type="button" onclick="clearOne()" value="C" />
+            <input type="button" value="1/x" onclick="screen.value += '1/' " />
+            <input type="button" value="x^" onclick="screen.value += '^' " />
+          </div>
+          <div>
+            <input type="button" value="n!" onclick="screen.value += '!' "/>
+            <input type="button" value="√" data-value="sqrt" onclick="screen.value += '√' "/>
+            <input type="button" value="log" onclick="screen.value += 'log' "/>
+            <input type="button" value="ln" onclick="screen.value += 'ln' "/>
+          </div>
+          <div>
+            <input type="button" value="7" onclick="screen.value += '7' " />
+            <input type="button" value="8" onclick="screen.value += '8' " />
+            <input type="button" value="9" onclick="screen.value += '9' " />
+            <input type="button" value="*" onclick="screen.value += '*' " />
+          </div>
+          <div>
+            <input type="button" value="4" onclick="screen.value += '4' " />
+            <input type="button" value="5" onclick="screen.value += '5' " />
+            <input type="button" value="6" onclick="screen.value += '6' " />
+            <input type="button" value="/" onclick="screen.value += '/' " />
+          </div>
+          <div>
+            <input type="button" value="1" onclick="screen.value += '1' " />
+            <input type="button" value="2" onclick="screen.value += '2' " />
+            <input type="button" value="3" onclick="screen.value += '3' " />
+            <input type="button" value="+" onclick="screen.value += '+' " />
+          </div>
+          <div>
+            <input type="button" value="%" onclick="screen.value += '%' " />
+            <input type="button" value="0" onclick="screen.value += '0' " />
+            <input type="button" value="." onclick="screen.value += '.' " />
+            <input
+              type="button"
+              value="="
+              onclick="calculateResult()"
+              class="equalto"
+            />
+          </div>
+        </form>
+      </div>
+    </container>
+
+    <script src="script.js"></script>
+  </body>
+</html>
