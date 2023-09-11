@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 * {
   margin: 0;
@@ -24,12 +24,25 @@ container {
   border-radius: 10px;
 }
 
-input[type="text"] {
+#screen {
+  text-align: right;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  padding: 30px 0;
+}
+
+#screenInp {
   width: 100%;
   font-size: 24px;
-  padding: 25px;
-  margin-bottom: 10px;
+  padding: 10px;
   border: none;
+  text-align: right;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 4px;
 }
 
 input[type="button"] {
@@ -43,19 +56,6 @@ input[type="button"] {
   box-shadow: 0.5px 0.5px 5px;
   margin: 5px;
   cursor: pointer;
-}
-
-#screen {
-  text-align: right;
-  justify-content: flex-end;
-  margin: 30px 0;
-}
-
-#screen input {
-  text-align: right;
-  flex: 1;
-  font-size: 20px;
-  box-shadow: none;
 }
 
 .equalto {
