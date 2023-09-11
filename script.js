@@ -1,3 +1,23 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll("#buttons input[type='button']");
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const value = button.value;
+
+      if (value === "AC") {
+        clearAll();
+      } else if (value === "C") {
+        clearOne();
+      } else if (value === "=") {
+        calculateResult();
+      } else {
+        // Append the button's value to the screen input
+        document.getElementById("screenInp").value += value;
+      }
+    });
+  });
+});
+
 function clearAll() {
   document.getElementById("screenInp").value = "";
 }
