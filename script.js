@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
       } else if (value === "=") {
         calculateResult();
       } else {
-        // Append the button's value to the screen input
         document.getElementById("screenInp").value += value;
       }
     });
