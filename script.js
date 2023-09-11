@@ -11,7 +11,24 @@ document.addEventListener("DOMContentLoaded", function () {
       } else if (value === "=") {
         calculateResult();
       } else {
-        document.getElementById("screenInp").value += value;
+        const screenInp = document.getElementById("screenInp");
+        const currentVal = screenInp.value;
+
+        if (value === "1/x") {
+          if (currentVal !== "") {
+            screenInp.value = `1/(${currentVal})`;
+          }
+        } else if (value === "x^") {
+          if (currentVal !== "") {
+            screenInp.value = `${currentVal}^`;
+          }
+        } else if (value === "n!") {
+          if (currentVal !== "") {
+            screenInp.value = `${currentVal}!`;
+          }
+        } else {
+          screenInp.value += value;
+        }
       }
     });
   });
@@ -49,6 +66,21 @@ function calculateResult() {
     } else if (expression.includes("ln")) {
       const operand = parseFloat(expression.split("ln")[1]);
       expression = Math.log(operand).toString();
+    } else if (expression.includes("1/(")) {
+      const operand = parseFloat(expression.split("1/(")[1].split(")")[0]);
+      if (operand !== 0) {
+        expression = (1 / operand).toString();
+      } else {
+        document.getElementById("screenInp").value = "Error: Division by zero";
+        return;
+      }
+    } else if (expression.includes("^")) {
+      const operands = expression.split("^");
+      if (operands.length === 2) {
+        const base = parseFloat(operands[0]);
+        const exponent = parseFloat(operands[1]);
+        expression = Math.pow(base, exponent).toString();
+      }
     }
 
     document.getElementById("screenInp").value = eval(expression);
